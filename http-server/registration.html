@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+          
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            flex:none;
+            margin: auto;
+            margin-top:10px;
+        }
+        .entries-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            flex:none;
+            margin: auto;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            width: 100px; /* Adjust the label width */
+            text-align: right; /* Align label text to the right */
+            margin-right: 20px; /* Space between label and input */
+            font-size: 20px;
+   
+        }
+
+        .submit-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+
+       
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+     
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter full name" required>
+        </div>
+
+            <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+        </div>
+
+            <div class="form-group" >
+            <label for="password" style="margin-right:5px;">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+             </div>
+
+            <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required="required" required onblur="validateDOB()">
+            
+        </div>
+
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required >
+                Accept Terms & Conditions
+            </label>
+
+            <p class="error-message" id="errorMessage"></p>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <nbsp>    </nbsp>
+<div>
+        <div class="entries-section">
+            <h3>Entries</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>dob</th>
+                        <th>Accepted Terms?</th>
+                    </tr>
+                </thead>
+                <tbody id="entriesTableBody">
+                    <!-- This section will contain submitted entries -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
